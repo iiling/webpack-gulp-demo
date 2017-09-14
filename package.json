@@ -12,6 +12,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-connect": "^5.0.0",
     "html-webpack-plugin": "^2.8.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",

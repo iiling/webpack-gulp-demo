@@ -2,6 +2,7 @@ var gulp=require("gulp");
 var clean = require("gulp-clean");
 var webpack = require('webpack');
 var webpackConfig =require("./webpack.config.js");
+var connect = require('gulp-connect');
  
 gulp.task("copyimg",function(){
 	gulp.src("./src/img/*.png")
@@ -21,5 +22,22 @@ gulp.task("runwebpack",function(callback){
 
 })
 
+gulp.task("watch",function(){
+	gulp.watch("src/html/*.html",["reload"]);
+	gulp.watch("src/css/*.css",["reload"])
+})
 
-gulp.task("default",["clean","copyimg","runwebpack"]);
+gulp.task("connect",function(){
+	connect.server({
+		root:'src',
+		livereload:true
+	})
+})
+
+gulp.task("reload",function(){
+	gulp.src("dest/html/a.html")
+	.pipe(connect.reload())
+	
+})
+
+gulp.task("default",["clean","copyimg","runwebpack","connect","watch"]);
