@@ -3,7 +3,8 @@ var clean = require("gulp-clean");
 var webpack = require('webpack');
 var webpackConfig =require("./webpack.config.js");
 var connect = require('gulp-connect');
- 
+// var babel=require('gulp-babel');
+
 gulp.task("copyimg",function(){
 	gulp.src("./src/img/*.png")
 	.pipe(gulp.dest("./dest/img/"))
